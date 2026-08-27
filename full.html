@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="生命靈數自動計算與完整免費解盤">
+  <title>生命靈數自動解盤</title>
+  <link rel="stylesheet" href="full-style.css">
+  <script defer src="content-data.js"></script>
+  <script defer src="full-script.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">數字裡的下午茶</p>
+      <h1>生命靈數自動解盤</h1>
+      <p>輸入西元出生日期，從數字看見你的核心能量、優勢、過載模式與後天課題。</p>
+      <form id="calculator" class="calculator">
+        <label for="birthDate">西元出生年月日</label>
+        <div class="input-row">
+          <input id="birthDate" type="date" required>
+          <button type="submit">開始計算</button>
+        </div>
+        <p id="error" class="error" role="alert"></p>
+      </form>
+    </div>
+  </header>
+
+  <main id="result" class="wrap result" hidden>
+    <section class="overview card">
+      <div>
+        <p class="section-kicker">你的命盤摘要</p>
+        <h2 id="resultTitle"></h2>
+        <p id="integratedSummary" class="lead"></p>
+      </div>
+      <dl id="coreNumbers" class="core-grid"></dl>
+    </section>
+
+    <section class="section-grid">
+      <article class="card">
+        <div class="section-head"><div><p class="section-kicker">完成盤</p><h2>九宮格</h2></div></div>
+        <div id="grid" class="number-grid" aria-label="生命靈數九宮格"></div>
+        <p class="note">數字出現次數包含先天數及生日數、天賦數、主命數等衍生能量。</p>
+      </article>
+      <article class="card">
+        <p class="section-kicker">整體觀察</p><h2>能量重點</h2>
+        <div id="highlights" class="highlight-list"></div>
+      </article>
+    </section>
+
+    <section class="content-section">
+      <div class="section-head"><div><p class="section-kicker">1～9能量</p><h2>數字完整解析</h2></div><p>先看整體，再展開想深入理解的數字。</p></div>
+      <div id="numberCards" class="cards"></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-head"><div><p class="section-kicker">12條連線</p><h2>成立與尚未形成</h2></div></div>
+      <h3>正式成立</h3><div id="formedLines" class="cards"></div>
+      <h3>尚未形成</h3><div id="nearLines" class="cards compact"></div>
+    </section>
+
+    <section class="card service">
+      <p class="section-kicker">完整人工解盤</p>
+      <h2>自動計算幫你看見結構，人工解盤協助你放回生活理解</h2>
+      <div class="plans">
+        <article><h3>完整個人解盤</h3><strong>NT$980</strong><p>約50分鐘｜完整理解自己的命盤。</p><a href="./?plan=personal">選擇完整個人解盤</a></article>
+        <article><h3>主題深度解盤</h3><strong>NT$1,480</strong><p>約75分鐘｜完整命盤加一個生活主題。</p><a href="./?plan=topic">選擇主題深度解盤</a></article>
+      </div>
+    </section>
+    <p class="disclaimer">生命靈數屬於自我探索與生活反思工具，不取代醫療、心理、法律或財務專業。</p>
+  </main>
+</body>
+</html>
