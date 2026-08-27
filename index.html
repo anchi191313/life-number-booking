@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="生命靈數完整解盤 LINE 預約">
+  <title>生命靈數完整解盤預約</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow">完整解盤服務</p>
+      <h1>預約你的完整解盤</h1>
+      <p class="subtitle">填寫資料後，我們會整理成 LINE 預約內容。</p>
+    </header>
+
+    <section class="card" aria-live="polite">
+      <div class="stepper" aria-label="預約進度">
+        <span class="step active" data-step-dot="1">1 填寫資料</span>
+        <span class="step" data-step-dot="2">2 確認資料</span>
+        <span class="step" data-step-dot="3">3 前往 LINE</span>
+      </div>
+
+      <div id="formStep">
+        <div class="plan-box">
+          <span>你選擇</span>
+          <strong id="selectedPlan"></strong>
+        </div>
+
+        <form id="bookingForm" novalidate>
+          <label>姓名／暱稱 <span aria-hidden="true">*</span>
+            <input id="name" name="name" autocomplete="name" required>
+          </label>
+
+          <label>西元出生年月日 <span aria-hidden="true">*</span>
+            <input id="birthDate" name="birthDate" type="date" required>
+          </label>
+
+          <label>你的聯絡方式 <span aria-hidden="true">*</span>
+            <input id="contact" name="contact" placeholder="例如：LINE 顯示名稱、手機或 Email" required>
+          </label>
+
+          <label>這次最想弄懂的一件事是什麼？ <span aria-hidden="true">*</span>
+            <textarea id="reason" name="reason" rows="5" minlength="10" placeholder="例如：我總是在工作中把很多事情攬到自己身上，想知道這和我的命盤有沒有關係。" required></textarea>
+            <small>請至少填寫 10 個字，建議 100～300 字。</small>
+          </label>
+
+          <label>還有什麼想先請解盤師知道？
+            <textarea id="note" name="note" rows="4"></textarea>
+          </label>
+
+          <p id="formError" class="error" role="alert"></p>
+          <div class="actions">
+            <a class="button secondary" href="javascript:history.back()">返回方案</a>
+            <button class="button primary" type="submit">下一步</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="confirmStep" hidden>
+        <h2>確認預約資料</h2>
+        <p class="section-note">請確認內容是否正確。送出後會產生可貼到 LINE 的文字。</p>
+        <dl id="confirmation" class="summary"></dl>
+        <div class="actions">
+          <button id="editButton" class="button secondary" type="button">返回修改</button>
+          <button id="generateButton" class="button primary" type="button">確認並產生預約內容</button>
+        </div>
+      </div>
+
+      <div id="lineStep" hidden>
+        <h2>LINE 預約內容預覽</h2>
+        <p class="section-note">先複製以下內容，再前往 LINE 貼上傳送。預約時間仍需由解盤師人工確認。</p>
+        <textarea id="linePreview" class="preview" rows="14" readonly></textarea>
+        <p id="copyStatus" class="copy-status" role="status"></p>
+        <div class="actions stacked-mobile">
+          <button id="copyButton" class="button secondary" type="button">複製預約內容</button>
+          <a id="lineButton" class="button line" href="https://lin.ee/PBp9leg" target="_blank" rel="noopener noreferrer">前往 LINE 完成預約</a>
+        </div>
+        <button id="backToConfirmButton" class="text-button" type="button">返回確認資料</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
