@@ -79,8 +79,7 @@ function buildLineMessage(data) {
   ].join("\n");
 }
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+function goToConfirmation() {
   formError.textContent = "";
   if (!form.checkValidity()) {
     formError.textContent = "請完成所有必填欄位，並確認內容格式。";
@@ -94,7 +93,13 @@ form.addEventListener("submit", (event) => {
   }
   renderConfirmation(data);
   setStep(2);
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  goToConfirmation();
 });
+document.querySelector("#nextButton").addEventListener("click", goToConfirmation);
 
 document.querySelector("#editButton").addEventListener("click", () => setStep(1));
 document.querySelector("#generateButton").addEventListener("click", () => {
